@@ -1,8 +1,4 @@
-import {
-    GraphQLObjectType,
-    GraphQLNonNull,
-    GraphQLString
-} from 'graphql';
+import { GraphQLObjectType, GraphQLNonNull, GraphQLString } from 'graphql';
 import UserType from './userType';
 import Auth from '../../services/helpers';
 
@@ -18,25 +14,12 @@ const RootQueryType = new GraphQLObjectType({
         identifyUserByToken: {
             type: UserType,
             args: {
-                token: {
-                    type: new GraphQLNonNull(GraphQLString)
-                }
+                token: { type: new GraphQLNonNull(GraphQLString) }
             },
-            resolve(parentValue, {
-                token
-            }, req) {
-                return Auth.identifyUserByToken({
-                    token,
-                    req
-                })
+            resolve(parentValue, { token }, req) {
+                return Auth.identifyUserByToken({ token, req })
             }
-        },
-        // visitorsData: {
-        //     type: visitorShipType,
-        //     resolve(parentValue, args, req) {
-                
-        //     }
-        // }
+        }
     })
 });
 

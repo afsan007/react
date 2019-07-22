@@ -22,18 +22,18 @@ module.exports= {
     externals:[nodeExternals()],
     module:{
         rules:[
-            {
-                test: /\.(js|mjs|jsx|ts|tsx)$/,
-                exclude: /node_modules/,
-                enforce: 'pre',
-                use: [{
-                    loader: require.resolve('eslint-loader'),
-                    options: {
-                        formatter: require.resolve('react-dev-utils/eslintFormatter'),
-                        eslintPath: require.resolve('eslint'),
-                    },
-                }]
-            },
+            // {
+            //     test: /\.(js|mjs|jsx|ts|tsx)$/,
+            //     exclude: /node_modules/,
+            //     enforce: 'pre',
+            //     use: [{
+            //         loader: require.resolve('eslint-loader'),
+            //         options: {
+            //             formatter: require.resolve('react-dev-utils/eslintFormatter'),
+            //             eslintPath: require.resolve('eslint'),
+            //         },
+            //     }]
+            // },
             {
                 test:/.js?$/,
                 exclude:/node_modules/,
